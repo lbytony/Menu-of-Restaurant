@@ -1,6 +1,7 @@
 package cn.menu.db.util;
 
 import java.io.IOException;
+import java.security.MessageDigest;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,10 +34,10 @@ public class DBUtil {
 	// 驱动，服务器地址，登录用户名，密码
 	static String DBDRIVER = "com.mysql.cj.jdbc.Driver";
 	static String DBHOST = "172.19.38.100:4000";
-	static String DBURL = "jdbc:mysql://" + DBHOST + "/RestaurantMenu";
+	static String DBURL = "jdbc:mysql://" + DBHOST + "?useSSL=false&serverTimezone=Asia/Shanghai";
 	static String DBUID = "root";
-	static String DBPWD = "Li19991123";
-	// 打开连接
+	static String DBPWD = "liboyan";
+// 打开连接
 	static {
 		// 加载驱动
 		try {
@@ -96,6 +97,8 @@ public class DBUtil {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(DBURL, DBUID, DBPWD);
+			stmt = conn.createStatement();
+			stmt.execute("USE `RestaurantMenu`");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -386,6 +389,31 @@ public class DBUtil {
 			timestampnow = new Timestamp(current.getTime());
 			return timestampnow;
 		} catch (NullPointerException e) {
+			return null;
+		}
+	}
+
+	public static String MD5(String key) {
+		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+		try {
+			byte[] btInput = key.getBytes();
+			// 获得MD5摘要算法的 MessageDigest 对象
+			MessageDigest mdInst = MessageDigest.getInstance("MD5");
+			// 使用指定的字节更新摘要
+			mdInst.update(btInput);
+			// 获得密文
+			byte[] md = mdInst.digest();
+			// 把密文转换成十六进制的字符串形式
+			int j = md.length;
+			char str[] = new char[j * 2];
+			int k = 0;
+			for (int i = 0; i < j; i++) {
+				byte byte0 = md[i];
+				str[k++] = hexDigits[byte0 >>> 4 & 0xf];
+				str[k++] = hexDigits[byte0 & 0xf];
+			}
+			return new String(str);
+		} catch (Exception e) {
 			return null;
 		}
 	}

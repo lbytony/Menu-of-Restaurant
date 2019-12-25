@@ -1,5 +1,7 @@
 package cn.menu.db.entity;
 
+import cn.menu.db.action.OrderForms;
+
 public class OrderForm {
 	int OID;
 	int UID;
@@ -7,6 +9,10 @@ public class OrderForm {
 	String OPTime;
 	double OPrice;
 	boolean OStatus;
+
+	public OrderForm(int uid, int rtnid) {
+		rtnid = OrderForms.newOne(uid);
+	}
 
 	public OrderForm(int OID, int UID, String OTime, String OPTime, double OPrice, boolean OStatus) {
 		this.OID = OID;

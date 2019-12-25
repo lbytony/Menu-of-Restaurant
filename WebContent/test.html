@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<button class="layui-btn" onclick="window.delete('123')">删除</button>
+	<script type="text/javascript">
+		window.delete = function(a) {
+			window.location.href="event.jsp?did=" + a;
+		};
+	</script>
+</body>
+</html>

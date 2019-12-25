@@ -20,8 +20,8 @@ public class JDBC {
 	public static void main(String[] args) {
 		String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 		String DB_URL = "jdbc:mysql://172.19.38.100:4000?useSSL=false&serverTimezone=Asia/Shanghai";
-		String DB_USERNAME = "restaurant";
-		String DB_PASSWORD = "restaurant";
+		String DB_USERNAME = "root";
+		String DB_PASSWORD = "liboyan";
 
 		try {
 			Class.forName(DB_DRIVER);
@@ -39,7 +39,5 @@ public class JDBC {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("THEEE");
 	}
-
 }

@@ -5,30 +5,8 @@ body {
 }
 
 #login-bg.container-fluid {
-	padding: 0;
 	height: 100%;
 	position: absolute;
-}
-
-/* Background image an color divs*/
-.bg-img, .bg-color {
-	min-width: 50%;
-	vertical-align: top;
-	padding: 0;
-	margin-left: 0;
-	height: 100%;
-	background-color: #CAF0D3;
-	display: inline-block;
-	overflow: hidden;
-}
-
-.bg-color {
-	margin-left: -5px;
-}
-
-.bg-img {
-	background-image: url(./bg-image.jpeg);
-	background-size: cover;
 }
 
 #login {
@@ -173,8 +151,5 @@ input:checked+.slider:before {
 		text-align: right;
 		float: left;
 		padding: 20px 0;
-	}
-	#login {
-		padding-top: 50px;
 	}
 }

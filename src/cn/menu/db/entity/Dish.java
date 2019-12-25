@@ -1,58 +1,59 @@
 package cn.menu.db.entity;
 
 public class Dish {
-	int DID;
-	String DName;
-	String DPicPath;
-	boolean DKind;
-	double DPrice;
+	int dID;
+	String dName;
+	String dPicPath;
+	boolean dKind;
+	double dPrice;
 
-	public Dish(int DID, String DName, String DPicPath, boolean DKind, double DPrice) {
-		this.DID = DID;
-		this.DName = DName;
-		this.DPicPath = DPicPath;
-		this.DKind = DKind;
-		this.DPrice = DPrice;
+	public Dish(int dID, String dName, String dPicPath, boolean dKind, double dPrice) {
+		super();
+		this.dID = dID;
+		this.dName = dName;
+		this.dPicPath = dPicPath;
+		this.dKind = dKind;
+		this.dPrice = dPrice;
 	}
 
-	public int getDID() {
-		return DID;
+	public int getdID() {
+		return dID;
 	}
 
-	public void setDID(int dID) {
-		DID = dID;
+	public void setdID(int dID) {
+		this.dID = dID;
 	}
 
-	public String getDName() {
-		return DName;
+	public String getdName() {
+		return dName;
 	}
 
-	public void setDName(String dName) {
-		DName = dName;
+	public void setdName(String dName) {
+		this.dName = dName;
 	}
 
-	public String getDPicPath() {
-		return DPicPath;
+	public String getdPicPath() {
+		return dPicPath;
 	}
 
-	public void setDPicPath(String dPicPath) {
-		DPicPath = dPicPath;
+	public void setdPicPath(String dPicPath) {
+		this.dPicPath = dPicPath;
 	}
 
-	public boolean isDKind() {
-		return DKind;
+	public boolean isdKind() {
+		return dKind;
 	}
 
-	public void setDKind(boolean dKind) {
-		DKind = dKind;
+	public void setdKind(boolean dKind) {
+		this.dKind = dKind;
 	}
 
-	public double getDPrice() {
-		return DPrice;
+	public double getdPrice() {
+		return dPrice;
 	}
 
-	public void setDPrice(double dPrice) {
-		DPrice = dPrice;
+	public void setdPrice(double dPrice) {
+		this.dPrice = dPrice;
 	}
 
 }

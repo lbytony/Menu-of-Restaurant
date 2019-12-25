@@ -8,6 +8,10 @@ public class User {
 	boolean URole;
 	boolean USex;
 
+	public User() {
+
+	}
+
 	public User(int uID, String uName, String uPassword, String uRegDate, boolean uRole, boolean uSex) {
 		UID = uID;
 		UName = uName;
